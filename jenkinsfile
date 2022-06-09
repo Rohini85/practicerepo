@@ -1,0 +1,14 @@
+pipeline{
+    agent any
+    stages{
+        stage ("source code"){
+            steps{
+                git branch: 'main', url: 'https://github.com/Rohini85/practicerepo.git'
+            }
+        }
+         stage ("build"){
+            steps{
+             sh 'mvn clean'   
+            }
+        }
+    }
